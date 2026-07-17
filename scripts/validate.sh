@@ -16,6 +16,7 @@ kubeconform -strict -summary \
   config/crd/ping.yaml \
   config/rbac/role.yaml \
   config/manager/deployment.yaml \
+  config/manager/service.yaml \
   config/samples/ping-sample.yaml
 
 echo "OK: all validations passed"
