@@ -1,6 +1,6 @@
 # devops-k8s-operator
 
-A minimal Kubernetes operator scaffold (Day 1 of a 4-day DevOps cycle).
+A minimal Kubernetes operator scaffold.
 
 ## Purpose
 
@@ -8,7 +8,7 @@ This operator introduces a custom resource `Ping` (`operators.example.com/v1`).
 A `Ping` instructs the controller to emit a periodic "ping" log message at a
 configurable interval and record the last ping time plus a running count in the
 resource's status. It is intentionally tiny — a working, deployable skeleton you
-can extend over the next 3 days (webhooks, tests, metrics, multi-resource, etc.).
+can extend over time (webhooks, tests, metrics, multi-resource, etc.).
 
 ## Layout
 
