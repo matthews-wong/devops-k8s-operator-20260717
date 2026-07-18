@@ -31,11 +31,16 @@ spec:
               properties:
                 message:
                   type: string
+                  minLength: 1
                   maxLength: 140
                 intervalSeconds:
                   type: integer
                   minimum: 1
+                  maximum: 3600
                   default: 30
+              x-kubernetes-validations:
+                - rule: "self.intervalSeconds >= 1 && self.intervalSeconds <= 3600"
+                  message: "intervalSeconds must be between 1 and 3600"
             status:
               type: object
               properties:
