@@ -74,9 +74,17 @@ schema checks**, never by deploying:
 ./scripts/validate.sh
 ```
 
+## Continuous integration
+
+Every push to `main` and every pull request runs `.github/workflows/ci.yaml`,
+which executes the same gate as a local checkout: `go build ./...`,
+`go vet ./...`, `go test ./...`, and `./scripts/validate.sh` (kubeconform
+schema checks). Go modules are cached between runs and `kubeconform` is
+installed from a pinned release, so a green check on a PR means the manifests
+and code validated together.
+
 ## Next steps (refinement backlog)
 
 - Add unit/integration tests (`envtest`).
 - Add a conversion/mutating webhook example.
 - Add `Makefile` deploy targets via kustomize.
-- Add CI workflow running `scripts/validate.sh`.
